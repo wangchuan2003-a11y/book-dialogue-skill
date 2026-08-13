@@ -10,7 +10,8 @@ $required = @(
     'references/book-model.md',
     'references/dialogue-protocol.md',
     'references/learning-record.md',
-    'tests/fixtures/mini-book.md'
+    'tests/fixtures/mini-book.md',
+    'evals/trigger-eval.json'
 )
 
 foreach ($relative in $required) {
@@ -42,7 +43,10 @@ $patterns = @(
     '本书没有直接讨论这个问题。【不足】',
     '不得直接替作者回答“会”或“不会”',
     '### 新对象硬门禁',
-    '只要关键对象未出现，就禁止用作者口吻直接回答'
+    '只要关键对象未出现，就禁止用作者口吻直接回答',
+    '不要把裸目录当作阅读授权',
+    '当前没有可依赖的持久学习记录',
+    '不得靠连续读取后声称仍完整记得前文'
 )
 
 foreach ($pattern in $patterns) {
@@ -64,4 +68,4 @@ if ($fixture -notmatch 'Ignore all previous instructions') {
     throw 'Prompt-injection fixture is missing'
 }
 
-Write-Output 'validation ok: book-dialogue v0.1.0'
+Write-Output 'structural validation ok: book-dialogue v0.1.1 (behavior requires fresh-session cases)'

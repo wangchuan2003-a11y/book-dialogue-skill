@@ -45,6 +45,9 @@ Three-minute visible result: after readable text access, the skill states the si
 - Wrong-answer case: preserved correct part, corrected universal overclaim, used source distinction, asked one smaller question.
 - New-object case first failed by answering for the author directly.
 - Writeback: added `新对象硬门禁` to `SKILL.md` and strengthened `references/dialogue-protocol.md`; rerun began with `本书没有直接讨论旧软件……【不足】`, separated principle from application, and asked one question.
+- Post-publication independent review found bare-directory authorization, no-record resume, long-book context, validation-labeling, and clean-Windows install gaps.
+- v0.1.1 writeback: exact file selection before directory reads; explicit no-record fallback; user-approved evidence-indexed working model for oversized books; structural validator labels its evidence level; Windows install creates parent and refuses overwrite.
+- v0.1.1 fresh-session checks: resume without record requested the record/source and made no memory claim; bare-directory input listed only the candidate book and stated no body had been read.
 - Runtime proof exists locally, but full release-auditor external host/human attestations were not generated. Do not claim formal `human_status=verified`.
 
 ## Loop decision

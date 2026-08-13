@@ -11,7 +11,7 @@
 - 证据分级：区分原文、释义、跨段综合与外部知识。
 - 一次一问：避免长讲义和问题清单。
 - 保留复杂性：不抹平书中的矛盾、角色差异和未解决问题。
-- 适合长书：支持分批读取，但必须掌握授权范围的全局后再模拟作者立场。
+- 适合长书：先判断当前上下文容量；超出时，只有得到用户同意后才在指定路径建立带证据索引的分批工作模型，完成全局覆盖后再模拟作者立场。
 - 可选学习档案：只有用户要求时才保存进度。
 
 ## 安装
@@ -25,6 +25,10 @@
 或在 PowerShell 中：
 
 ```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
+if (Test-Path "$env:USERPROFILE\.claude\skills\book-dialogue") {
+    throw 'book-dialogue already exists; update or remove it explicitly before cloning.'
+}
 git clone https://github.com/wangchuan2003-a11y/book-dialogue-skill "$env:USERPROFILE\.claude\skills\book-dialogue"
 ```
 
@@ -56,7 +60,7 @@ git clone https://github.com/wangchuan2003-a11y/book-dialogue-skill "$env:USERPR
 
 ## 当前成熟度
 
-`v0.1.0` 已通过 Windows 结构校验和 Claude Code 干净会话行为冒烟测试，包括：正确触发、一次一问、错误答案纠正、书内提示注入隔离，以及“书中未出现的新对象”证据门禁。尚未经过大规模不同体裁书籍测试或外部人工发布认证；遇到复杂译本、多卷本或扫描质量较差的书，请核对关键引用和覆盖范围。
+`v0.1.1` 已通过 Windows 结构校验和 Claude Code 干净会话行为冒烟测试，包括：正确触发、一次一问、错误答案纠正、书内提示注入隔离，以及“书中未出现的新对象”证据门禁。`tests/validate.ps1` 只验证包结构和必备规则；真实行为步骤与已执行结果分别记录在 `tests/CASES.md` 和 `evals/release-evidence-v0.1.0.md`，不能用结构校验代替行为证明。尚未经过大规模不同体裁书籍测试或外部人工发布认证；遇到复杂译本、多卷本或扫描质量较差的书，请核对关键引用和覆盖范围。
 
 ## 文件
 
