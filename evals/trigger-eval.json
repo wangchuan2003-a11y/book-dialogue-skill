@@ -1,0 +1,54 @@
+{
+  "skill": "book-dialogue",
+  "version": "0.1.0",
+  "cases": [
+    {
+      "id": "trigger-explicit",
+      "class": "should-trigger",
+      "prompt": "分析这本书，然后扮演基于文本重建的作者，一次问我一个问题。",
+      "expected": "trigger"
+    },
+    {
+      "id": "trigger-socratic",
+      "class": "should-trigger",
+      "prompt": "用类似《理想国》的对话方式帮助我理解这本书。",
+      "expected": "trigger"
+    },
+    {
+      "id": "trigger-resume",
+      "class": "should-trigger",
+      "prompt": "读取学习档案，继续上次的作者问答。",
+      "expected": "trigger"
+    },
+    {
+      "id": "no-trigger-summary",
+      "class": "should-not-trigger",
+      "prompt": "把这篇新闻总结成三点。",
+      "expected": "no-trigger"
+    },
+    {
+      "id": "no-trigger-fiction",
+      "class": "should-not-trigger",
+      "prompt": "模仿鲁迅的文风写一篇新小说。",
+      "expected": "no-trigger"
+    },
+    {
+      "id": "near-miss-book-summary",
+      "class": "near-miss",
+      "prompt": "概括这本书每章讲了什么。",
+      "expected": "no-trigger-unless-dialogue-requested"
+    },
+    {
+      "id": "ambiguous-author-chat",
+      "class": "ambiguous",
+      "prompt": "我想和作者聊聊。",
+      "expected": "clarify-book-and-text-source"
+    },
+    {
+      "id": "boundary-no-text",
+      "class": "boundary",
+      "prompt": "我没提供原书，但请直接作为作者回答。",
+      "expected": "request-text-and-refuse-unsupported-simulation"
+    }
+  ]
+}
