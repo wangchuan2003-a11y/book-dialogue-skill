@@ -56,4 +56,4 @@ Three-minute visible result: after readable text access, the skill states the si
 - Reusable learning: modern objects absent from a book need a hard lexical gate before author-simulation, not a soft evidence reminder.
 - Writeback locations: `SKILL.md`, `references/dialogue-protocol.md`, `tests/validate.ps1`, `tests/CASES.md`.
 - Next reuse key: `new-object-author-simulation-gate-v1`.
-- Honest release status: functional public v0.1.0 with runtime smoke evidence; formal external human-attested release gate remains pending.
+- Honest release status: functional public v0.1.1 with runtime smoke evidence; formal external human-attested release gate remains pending.
