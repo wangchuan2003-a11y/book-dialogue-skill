@@ -1,6 +1,6 @@
 {
   "skill": "book-dialogue",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "id": "trigger-explicit",
@@ -19,6 +19,18 @@
       "class": "should-trigger",
       "prompt": "读取学习档案，继续上次的作者问答。",
       "expected": "trigger"
+    },
+    {
+      "id": "no-trigger-book-summary",
+      "class": "should-not-trigger",
+      "prompt": "我已经提供了这本书，请按章节概括内容，不要和我对话。",
+      "expected": "no-trigger"
+    },
+    {
+      "id": "no-trigger-literary-analysis",
+      "class": "should-not-trigger",
+      "prompt": "分析这部小说的叙事结构和意象，不要问我问题。",
+      "expected": "no-trigger"
     },
     {
       "id": "no-trigger-summary",
